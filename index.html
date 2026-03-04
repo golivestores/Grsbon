@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRSBON — Design Versions</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #111;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+}
+h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.sub {
+  color: #888;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  width: 100%;
+}
+.card {
+  display: block;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, transform 0.25s, background 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  border-color: var(--accent);
+  background: #1e1e1e;
+  transform: translateY(-4px);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.card:hover::before { opacity: 1; }
+.card-v1 { --accent: #D42B2B; }
+.card-v2 { --accent: #0c4187; }
+.card-v3 { --accent: #c67b30; }
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.card h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+.card p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #555;
+}
+.badge span {
+  background: #252525;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.arrow {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: #252525;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: background 0.25s, transform 0.25s;
+}
+.card:hover .arrow {
+  background: var(--accent);
+  transform: translate(2px, -2px);
+}
+footer {
+  margin-top: 48px;
+  color: #444;
+  font-size: 13px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="logo">GRSBON · Dajiang Manufacturing</div>
+<h1>Website Design Versions</h1>
+<p class="sub">Three design concepts for review — click to preview each version</p>
+
+<div class="grid">
+  <a href="index_v1.html" class="card card-v1">
+    <div class="tag">Version 1</div>
+    <h2>Industrial Black & Red</h2>
+    <p>Bold dark theme with high contrast. Most complete version with full sections including hero, products, certificates, and contact.</p>
+    <div class="badge">
+      <span>Dark</span>
+      <span>Barlow Condensed</span>
+      <span>Most Complete</span>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <a href="index_v2.html" class="card card-v2">
+    <div class="tag">Version 2</div>
+    <h2>Corporate Navy & Maroon</h2>
+    <p>Traditional B2B styling with authoritative navy blue and Playfair Display serif typography. Classic enterprise look.</p>
+    <div class="badge">
+      <span>Light</span>
+      <span>Playfair Display</span>
+      <span>Corporate</span>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+
+  <a href="index_v3.html" class="card card-v3">
+    <div class="tag">Version 3</div>
+    <h2>Architectural Copper</h2>
+    <p>Swiss design-inspired with warm copper accents on charcoal. Premium architectural feel with IBM Plex typography.</p>
+    <div class="badge">
+      <span>Mixed</span>
+      <span>IBM Plex</span>
+      <span>Premium</span>
+    </div>
+    <div class="arrow">→</div>
+  </a>
+</div>
+
+<footer>GRSBON · Dajiang Manufacturing Co., Ltd · Est. 2001</footer>
+
+</body>
+</html>
